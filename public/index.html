@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>LOGIN-FORM</title>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Login Form -->
+    <form action="http://localhost:3000/login" method="post" class="form active" id="loginForm">
+      <h2>Login</h2>
+      <input type="email" placeholder="Email" name="name" required />
+      <input type="password" placeholder="Password" name="password" required />
+      <button type="submit">Login</button>
+      <div class="toggle">
+        Don't have an account? <a onclick="showForm('registerForm')">Register</a>
+      </div>
+    </form>
+
+    <!-- Registration Form -->
+    <form action="http://localhost:3000/register" method="POST" class="form" id="registerForm">
+      <h2>Register</h2>
+      <input type="text" placeholder="Full Name" name="name" required />
+      <input type="email" placeholder="Email" required name="email" />
+      <input type="password" placeholder="Password" required  name="password"/>
+      <button type="submit">Register</button>
+      <div class="toggle">
+        Already have an account? <a onclick="showForm('loginForm')">Login</a>
+      </div>
+    </form>
+  </div>
+
+</body>
+
+ <script>
+    function showForm(formId) {
+      document.getElementById('loginForm').classList.remove('active');
+      document.getElementById('registerForm').classList.remove('active');
+      document.getElementById(formId).classList.add('active');
+    }
+  </script>
+
+</html>
